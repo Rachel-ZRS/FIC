@@ -1,0 +1,31 @@
+<div class="data-listing">
+    <div class="global-summary">
+        <p class="category-name" [innerHTML]="globalSummary.categoryName"></p>
+        <p class="number" [innerHTML]="globalSummary.categoryNumber | currency:'':'':'.0'"></p>
+    </div>
+    
+    <div class="category-tabs">
+        <div (click)="switchCategory('confirmed')" [ngClass]="{'tab-selected': tcSelected}" [innerHTML]="category_confirm"></div>
+        <div (click)="switchCategory('death')" [ngClass]="{'tab-selected': !tcSelected}" [innerHTML]="category_death"></div>
+    </div>
+    
+    <div class="country-list">
+        <p *ngFor="let countryData of countryDataList" (click)="switchIndexesData(countryData.name)" [ngClass]="{'list-item-selected': selectedCountryName==countryData.name}">
+            <span class="number" [innerHTML]="countryData.number | currency:'':'':'.0'"></span>
+            <span class="name" [innerHTML]="countryData.name"></span>
+        </p>
+    </div>
+    
+    <div class="seven-indexes">
+        <p>
+            <span class="label">Country: </span>
+            <span class="country" [innerHTML]="selectedCountryName"></span>
+        </p>
+        <table>
+            <tr *ngFor="let index of indexes">
+                <td class="index-name" [innerHTML]="index.name"></td>
+                <td class="number" [innerHTML]="index.value | currency:'':'':'.0'"></td>
+            </tr>
+        </table>
+    </div>
+</div>
