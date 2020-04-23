@@ -6,6 +6,10 @@ import { environment } from './environments/environment';
 
 import '@angular/compiler';
 
+/** echarts extensions: */
+import 'echarts/theme/macarons.js';
+import 'echarts/dist/extension/bmap.min.js';
+
 if (environment.production) {
   enableProdMode();
 }

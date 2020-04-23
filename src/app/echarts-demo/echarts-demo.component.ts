@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as echarts from 'echarts';
+import { of } from 'rxjs';
+
 @Component({
   selector: 'app-echarts-demo',
   templateUrl: './echarts-demo.component.html',
@@ -15,8 +18,94 @@ export class EchartsDemoComponent implements OnInit {
     }, 3000);
   }
 
+  mapOption = {};
   ngOnInit(): void {
-    
+    of(require("../../assets/xianggang.json")).subscribe(xgJson=>{
+      echarts.registerMap('HK', xgJson);
+      this.mapOption = {
+        title: {
+          text: '香港18区人口密度 （2011）',
+          subtext: '人口密度数据来自Wikipedia',
+          sublink: 'http://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83#cite_note-12'
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b}<br/>{c} (p / km2)'
+        },
+        toolbox: {
+          show: true,
+          orient: 'vertical',
+          left: 'right',
+          top: 'center',
+          feature: {
+            dataView: { readOnly: false },
+            restore: {},
+            saveAsImage: {}
+          }
+        },
+        visualMap: {
+          min: 800,
+          max: 50000,
+          text: ['High', 'Low'],
+          realtime: false,
+          calculable: true,
+          inRange: {
+            color: ['lightskyblue', 'yellow', 'orangered']
+          }
+        },
+        series: [
+          {
+            name: '香港18区人口密度',
+            type: 'map',
+            mapType: 'HK', // map type should be registered
+            itemStyle: {
+              normal: { label: { show: true } },
+              emphasis: { label: { show: true } }
+            },
+            data: [
+              { name: '元朗区', value: 20057.34 },
+              { name: '屯门区', value: 15477.48 },
+              { name: '离岛区', value: 31686.1 },
+              { name: '荃湾区', value: 6992.6 },
+              { name: '大埔区', value: 44045.49 },
+              { name: '沙田区', value: 40689.64 },
+              { name: '西贡区', value: 37659.78 },
+              { name: '葵青区', value: 45180.97 },
+              { name: '黄大仙区', value: 55204.26 },
+              { name: '深水埗区', value: 21900.9 },
+              { name: '观塘区', value: 4918.26 },
+              { name: '油尖旺区', value: 5881.84 },
+              { name: '九龙城区', value: 4178.01 },
+              { name: '中西区', value: 2227.92 },
+              { name: '湾仔区', value: 2180.98 },
+              { name: '东区', value: 9172.94 },
+              { name: '南区', value: 3368 },
+              { name: '北区', value: 2227.92}
+            ],
+            nameMap: {
+              'Central and Western': '中西区',
+              'Eastern': '东区',
+              'Islands': '离岛区',
+              'Kowloon City': '九龙城区',
+              'Kwai Tsing': '葵青区',
+              'Kwun Tong': '观塘区',
+              'North': '北区',
+              'Sai Kung': '西贡区',
+              'Sha Tin': '沙田区',
+              'Sham Shui Po': '深水埗区',
+              'Southern': '南区',
+              'Tai Po': '大埔区',
+              'Tsuen Wan': '荃湾区',
+              'Tuen Mun': '屯门区',
+              'Wan Chai': '湾仔区',
+              'Wong Tai Sin': '黄大仙区',
+              'Yau Tsim Mong': '油尖旺区',
+              'Yuen Long': '元朗区'
+            }
+          }
+        ]
+      };
+    });
   }
 
   chartOption = {
@@ -215,117 +304,6 @@ export class EchartsDemoComponent implements OnInit {
       },
       data:[11111,2222,33333,444]
     }]
-  }
-
-  dataMapValue = [
-      {name: '海门', value: [121.15,31.89,9]},
-      {name: '鄂尔多斯', value: [109.781327,39.608266,12]},
-      {name: '招远', value: [120.38,37.35,12]},
-      {name: '舟山', value: [122.207216,29.985295,12]},
-      {name: '齐齐哈尔', value: [123.97,47.33,14]},
-      {name: '盐城', value: [120.13,33.38,15]},
-      {name: '赤峰', value: [118.87,42.28,16]},
-      {name: '青岛', value: [120.33,36.07,18]},
-      {name: '乳山', value: [121.52,36.89,18]},
-      {name: '金昌', value: [102.188043,38.520089,19]}
-  ];
-
-  mapOption = {
-    backgroundColor: '#404a59',
-    title: {
-      text: '全国主要城市空气质量',
-      subtext: 'data from PM25.in',
-      sublink: 'http://www.pm25.in',
-      left: 'center',
-      textStyle: {
-        color: '#fff'
-      }
-    },
-    tooltip: {
-      trigger: 'item'
-    },
-    legend: {
-      orient: 'vertical',
-      y: 'bottom',
-      x: 'right',
-      data: ['pm2.5'],
-      textStyle: {
-        color: '#fff'
-      }
-    },
-    geo: {
-      map: 'china',
-      label: {
-        emphasis: {
-          show: false
-        }
-      },
-      roam: true,
-      itemStyle: {
-        normal: {
-          areaColor: '#323c48',
-          borderColor: '#111'
-        },
-        emphasis: {
-          areaColor: '#2a333d'
-        }
-      }
-    },
-    series: [
-      {
-        name: 'pm2.5',
-        type: 'scatter',
-        coordinateSystem: 'geo',
-        data: this.dataMapValue,
-        symbolSize: function (val) {
-          return val[2] / 10;
-        },
-        label: {
-          normal: {
-            formatter: '{b}',
-            position: 'right',
-            show: false
-          },
-          emphasis: {
-            show: true
-          }
-        },
-        itemStyle: {
-          normal: {
-            color: '#ddb926'
-          }
-        }
-      },
-      {
-        name: 'Top 5',
-        type: 'effectScatter',
-        coordinateSystem: 'geo',
-        data: this.dataMapValue,
-        symbolSize: function (val) {
-          return val[2] / 10;
-        },
-        showEffectOn: 'render',
-        rippleEffect: {
-          brushType: 'stroke'
-        },
-        hoverAnimation: true,
-        label: {
-          normal: {
-            formatter: '{b}',
-            position: 'right',
-            show: true
-          }
-        },
-        itemStyle: {
-          normal: {
-            color: '#f4e925',
-            shadowBlur: 10,
-            shadowColor: '#333'
-          }
-        },
-        zlevel: 1
-      }
-    ]
   }
 
 }

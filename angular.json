@@ -31,9 +31,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "./node_modules/echarts/dist/echarts.min.js",
-              "./node_modules/echarts/dist/extension/bmap.js",
-              "./node_modules/echarts/map/js/china.js"
             ]
           },
           "configurations": {
