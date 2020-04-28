@@ -5,64 +5,64 @@
   },
   "countryList": {
       "confirmedList": [{
-          "number": 609516,
-          "name": "US"
+          "value": 609516,
+          "name": "United States"
         }, {
-          "number": 174060,
+          "value": 174060,
           "name": "Spain"
         }, {
-          "number": 162486,
+          "value": 162486,
           "name": "Italy"
         }, {
-          "number": 152270,
+          "value": 152270,
           "name": "Germany"
         }, {
-          "number": 131342,
+          "value": 131342,
           "name": "France"
         }, {
-          "number": 94845,
-          "name": "UK"
+          "value": 94845,
+          "name": "United Kingdom"
         }, {
-          "number": 83351,
+          "value": 83351,
           "name": "China"
         }, {
-          "number": 74877,
+          "value": 74877,
           "name": "Iran"
         }, {
-          "number": 31119,
+          "value": 31119,
           "name": "Turkey"
         }],
       "deathList": [{
-          "number": 90511,
-          "name": "US"
+          "value": 90511,
+          "name": "United States"
         }, {
-          "number": 74023,
+          "value": 74023,
           "name": "Spain"
         }, {
-          "number": 42480,
+          "value": 42480,
           "name": "Italy"
         }, {
-          "number": 39270,
+          "value": 39270,
           "name": "Germany"
         }, {
-          "number": 31362,
+          "value": 31362,
           "name": "France"
         }, {
-          "number": 28845,
-          "name": "UK"
+          "value": 28845,
+          "name": "United Kingdom"
         }, {
-          "number": 28301,
+          "value": 28301,
           "name": "China"
         }, {
-          "number": 19800,
+          "value": 19800,
           "name": "Iran"
         }, {
-          "number": 16019,
+          "value": 16019,
           "name": "Turkey"
         }]
   },
   "countryIndexes": {
-    "US": [
+    "United States": [
       {
         "name": "Total Confirmed",
         "value": 1111111
@@ -86,7 +86,7 @@
         "value": 777
       }
     ],
-    "UK": [
+    "United Kingdom": [
       {
         "name": "Total Confirmed",
         "value": 222222

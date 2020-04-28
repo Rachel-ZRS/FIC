@@ -8,12 +8,14 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { DataListingComponent } from './data-listing/data-listing.component';
 
 import { HttpClientModule }    from '@angular/common/http';
+import { WorldMapComponent } from './world-map/world-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EchartsDemoComponent,
-    DataListingComponent
+    DataListingComponent,
+    WorldMapComponent
   ],
   imports: [
     BrowserModule,
