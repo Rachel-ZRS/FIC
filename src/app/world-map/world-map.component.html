@@ -1,1 +1,12 @@
-<div echarts [options]="mapOption" [theme]="'dark'"></div>
+<div>
+    <select name="seven-indexes" #switchIndex (change)="indexSelection(switchIndex.value)">
+        <option value="tc-Total Confirmed">Total Confirmed</option>
+        <option value="td-Total Death">Total Death</option>
+        <option value="tr-Total Recovered">Total Recovered</option>
+        <option value="nowc-Now Confirmed">Now Confirmed</option>
+        <option value="newc-New Confirmed">New Confirmed</option>
+        <option value="nd-New Death">New Death</option>
+        <option value="nr-New Recovered">New Recovered</option>
+    </select>
+</div>
+<div echarts [options]="mapOption" [theme]="'dark'" (chartInit)="onChartInit($event)"></div>
