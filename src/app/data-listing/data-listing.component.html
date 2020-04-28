@@ -11,7 +11,7 @@
     
     <div class="country-list">
         <p *ngFor="let countryData of countryDataList" (click)="switchIndexesData(countryData.name)" [ngClass]="{'list-item-selected': selectedCountryName==countryData.name}">
-            <span class="number" [innerHTML]="countryData.number | currency:'':'':'.0'"></span>
+            <span class="number" [innerHTML]="countryData.value | currency:'':'':'.0'"></span>
             <span class="name" [innerHTML]="countryData.name"></span>
         </p>
     </div>
