@@ -1,0 +1,45 @@
+<div class="selectors">
+    <select #sevenIndexes (change)="selectIndex(sevenIndexes.value)">
+        <option value="tc">Total Confirmed</option>
+        <option value="td">Total Death</option>
+        <option value="tr">Total Recovered</option>
+        <option value="nowc">Now Confirmed</option>
+        <option value="newc">New Confirmed</option>
+        <option value="nd">New Death</option>
+        <option value="nr">New Recovered</option>
+    </select>
+    <select #macroEconomics (change)="selectME(macroEconomics.value)">
+        <option value="GDP">GDP</option>
+        <option value="CPI">CPI</option>
+        <option value="M2">M2</option>
+        <option value="PPI">PPI</option>
+    </select>
+</div>
+
+<div class="country-1">
+    <div>
+        <select #country1 (change)="selectCountry(country1.value)">
+            <option value="China">China</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Japan">Japan</option>
+        </select>
+    </div>
+    <div echarts [theme]="'dark'" [options]="sevenIndexesOption" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndStockOption" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndMacroeOption" class="line-chart"></div>
+</div>
+
+<div class="country-2">
+    <div>
+        <select #country2 (change)="selectCountry(country2.value)">
+            <option value="US">United States</option>
+            <option value="China">China</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Japan">Japan</option>
+        </select>
+    </div>
+    <div echarts [theme]="'dark'" [options]="sevenIndexesOption" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndStockOption" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndMacroeOption" class="line-chart"></div>
+</div>

@@ -1,5 +1,5 @@
 .data-listing {
-    max-width: 16em;
+    width: 16em;
     height: 100%;
     color: #c1c0c0;
 }
@@ -55,7 +55,10 @@
 .country-list {
     margin-top: 0;
     padding: 1em 0.1em;
-    max-height: 13em;
+    
+    // max-height: 13em; // to be recovered?
+    min-height: 442px;
+
     overflow: scroll;
 
     p {

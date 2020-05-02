@@ -1,0 +1,25 @@
+select {
+    margin: 10px 0 6px 9px;
+    height: 30px;
+    width: 111px;
+    background-color: #333;
+    color: #fff;
+}
+
+div.selectors {
+    text-align: center;
+    select {
+        width: 220px;
+        margin: 0 30px 15px 30px;
+    }
+}
+
+div.country-1, div.country-2 {
+    margin-bottom: 10px;
+    background-color: #333;
+}
+
+.line-chart {
+    display: inline-block;
+    width: 33%;
+}

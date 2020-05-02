@@ -1,15 +1,3 @@
-<!-- <div>
-    <select name="seven-indexes" #switchIndex (change)="indexSelection(switchIndex.value)">
-        <option value="tc-Total Confirmed">Total Confirmed</option>
-        <option value="td-Total Death">Total Death</option>
-        <option value="tr-Total Recovered">Total Recovered</option>
-        <option value="nowc-Now Confirmed">Now Confirmed</option>
-        <option value="newc-New Confirmed">New Confirmed</option>
-        <option value="nd-New Death">New Death</option>
-        <option value="nr-New Recovered">New Recovered</option>
-    </select>
-</div> -->
-
 <div class="index-tabs">
     <div (click)="switchIndex('tc')" [ngClass]="{'tab-selected': selectedTab=='tc'}">Total Confirmed</div>
     <div (click)="switchIndex('td')" [ngClass]="{'tab-selected': selectedTab=='td'}">Total Death</div>
@@ -20,4 +8,4 @@
     <div (click)="switchIndex('nr')" [ngClass]="{'tab-selected': selectedTab=='nr'}">New Recovered</div>
 </div>
 
-<div echarts [options]="mapOption" [theme]="'dark'" (chartInit)="onChartInit($event)"></div>
+<div echarts [options]="mapOption" [theme]="'dark'" (chartInit)="onChartInit($event)" class="world-map"></div>

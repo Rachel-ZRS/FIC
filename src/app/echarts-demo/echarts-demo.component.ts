@@ -20,8 +20,8 @@ export class EchartsDemoComponent implements OnInit {
 
   mapOption = {};
   ngOnInit(): void {
-    of(require("../../assets/xianggang.json")).subscribe(xgJson=>{
-      echarts.registerMap('HK', xgJson);
+    of(require("../../assets/china.json")).subscribe(xgJson=>{
+      echarts.registerMap('CHN', xgJson);
       this.mapOption = {
         title: {
           text: '香港18区人口密度 （2011）',
@@ -44,64 +44,59 @@ export class EchartsDemoComponent implements OnInit {
           }
         },
         visualMap: {
-          min: 800,
-          max: 50000,
+          min: 800, // TODO calculate
+          max: 50000, // TODO calculate
           text: ['High', 'Low'],
           realtime: false,
           calculable: true,
           inRange: {
-            color: ['lightskyblue', 'yellow', 'orangered']
+            color: ['#F35342', '#C33D3D', '#950F0F', '#780404']
           }
         },
         series: [
           {
             name: '香港18区人口密度',
             type: 'map',
-            mapType: 'HK', // map type should be registered
+            mapType: 'CHN', // map type should be registered
             itemStyle: {
               normal: { label: { show: true } },
               emphasis: { label: { show: true } }
             },
             data: [
-              { name: '元朗区', value: 20057.34 },
-              { name: '屯门区', value: 15477.48 },
-              { name: '离岛区', value: 31686.1 },
-              { name: '荃湾区', value: 6992.6 },
-              { name: '大埔区', value: 44045.49 },
-              { name: '沙田区', value: 40689.64 },
-              { name: '西贡区', value: 37659.78 },
-              { name: '葵青区', value: 45180.97 },
-              { name: '黄大仙区', value: 55204.26 },
-              { name: '深水埗区', value: 21900.9 },
-              { name: '观塘区', value: 4918.26 },
-              { name: '油尖旺区', value: 5881.84 },
-              { name: '九龙城区', value: 4178.01 },
-              { name: '中西区', value: 2227.92 },
-              { name: '湾仔区', value: 2180.98 },
-              { name: '东区', value: 9172.94 },
-              { name: '南区', value: 3368 },
-              { name: '北区', value: 2227.92}
-            ],
-            nameMap: {
-              'Central and Western': '中西区',
-              'Eastern': '东区',
-              'Islands': '离岛区',
-              'Kowloon City': '九龙城区',
-              'Kwai Tsing': '葵青区',
-              'Kwun Tong': '观塘区',
-              'North': '北区',
-              'Sai Kung': '西贡区',
-              'Sha Tin': '沙田区',
-              'Sham Shui Po': '深水埗区',
-              'Southern': '南区',
-              'Tai Po': '大埔区',
-              'Tsuen Wan': '荃湾区',
-              'Tuen Mun': '屯门区',
-              'Wan Chai': '湾仔区',
-              'Wong Tai Sin': '黄大仙区',
-              'Yau Tsim Mong': '油尖旺区',
-              'Yuen Long': '元朗区'
-            }
+              { name: '黑龙江', value: 20057.34 },
+              { name: '吉林', value: 15477.48 },
+              { name: '辽宁', value: 31686.1 },
+              { name: '北京', value: 6992.6 },
+              { name: '河北', value: 44045.49 },
+              { name: '内蒙古', value: 40689.64 },
+              { name: '河南', value: 37659.78 },
+              { name: '江苏', value: 45180.97 },
+              { name: '山东', value: 55204.26 },
+              { name: '浙江', value: 21900.9 },
+              { name: '江西', value: 4918.26 },
+              { name: '上海', value: 5881.84 },
+              { name: '福建', value: 4178.01 },
+              { name: '广东', value: 2227.92 },
+              { name: '广西', value: 2180.98 },
+              { name: '云南', value: 9172.94 },
+              { name: '西藏', value: 3368 },
+              { name: '新疆', value: 2227.92},
+              { name: '青海', value: 2227.92},
+              { name: '甘肃', value: 2227.92},
+              { name: '宁夏', value: 2227.92},
+              { name: '陕西', value: 2227.92},
+              { name: '山西', value: 2227.92},
+              { name: '湖北', value: 2227.92},
+              { name: '湖南', value: 2227.92},
+              { name: '四川', value: 2227.92},
+              { name: '重庆', value: 2227.92},
+              { name: '贵州', value: 2227.92},
+              { name: '安徽', value: 2227.92},
+              { name: '香港', value: 2227.92},
+              { name: '澳门', value: 2227.92},
+              { name: '台湾', value: 2227.92},
+              { name: '海南', value: 45180.92}
+            ]
           }
         ]
       };
@@ -242,7 +237,7 @@ export class EchartsDemoComponent implements OnInit {
     title: {
       text: '今日访问量' // TODO 图表标题string
     },
-    color: ['#3398DB'],
+    color: ['#E52727'],
     //气泡提示框，常用于展现更详细的数据
     tooltip: {
       trigger: 'axis',

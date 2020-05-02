@@ -3,19 +3,19 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EchartsDemoComponent } from './echarts-demo/echarts-demo.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { DataListingComponent } from './data-listing/data-listing.component';
 
 import { HttpClientModule }    from '@angular/common/http';
 import { WorldMapComponent } from './world-map/world-map.component';
+import { LineChartsComponent } from './line-charts/line-charts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EchartsDemoComponent,
     DataListingComponent,
-    WorldMapComponent
+    WorldMapComponent,
+    LineChartsComponent
   ],
   imports: [
     BrowserModule,
