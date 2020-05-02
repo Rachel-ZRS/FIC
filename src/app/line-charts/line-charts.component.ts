@@ -145,4 +145,15 @@ export class LineChartsComponent implements OnInit {
     }]
   }
 
+  selectIndex(id: string) {
+
+  }
+
+  selectME(id: string) {
+
+  }
+
+  selectCountry(id: string) {
+    
+  }
 }
