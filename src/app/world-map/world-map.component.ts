@@ -13,6 +13,16 @@ export class WorldMapComponent implements OnInit {
 
   constructor(private dataService: DataListingService) {}
 
+  selectedTab = 'tc'; // Total Confirmed by default
+  indexesMapping = { // TODO abstract
+    'tc': 'Total Confirmed',
+    'td': 'Total Death',
+    'tr': 'Total Recovered',
+    'nowc': 'Now Confirmed',
+    'newc': 'New Confirmed',
+    'nd': 'New Death',
+    'nr': 'New Recovered'
+  };
   echartsInstance: any;
   mapOption = {};
   mapData: any;
@@ -36,7 +46,10 @@ export class WorldMapComponent implements OnInit {
         echarts.registerMap('world', worldJSON);
         this.mapOption = {
           title: {
-            text: 'Total Confirmed' // by default
+            text: 'Total Confirmed', // by default
+            textStyle: {
+              lineHeight: 60
+            }
           },
           tooltip: {
             trigger: 'item',
@@ -75,12 +88,14 @@ export class WorldMapComponent implements OnInit {
     });
   }
 
-  indexSelection(index: string) {
-    const indexId = index.split('-')[0];
-    const indexTitle = index.split('-')[1];
+  switchIndex(indexId: string) {
+    const indexTitle = this.indexesMapping[indexId];
     let newOption = {
       title: {
-        text: indexTitle
+        text: indexTitle,
+        textStyle: {
+          lineHeight: 60
+        }
       },
       tooltip: {
         trigger: 'item',
@@ -115,6 +130,7 @@ export class WorldMapComponent implements OnInit {
         }
       ]
     };
+    this.selectedTab = indexId;
     this.echartsInstance.setOption(newOption, true);
   }
   

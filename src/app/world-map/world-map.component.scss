@@ -1,7 +1,32 @@
-select {
-    margin-bottom: 20px;
-    height: 30px;
-    width: 200px;
-    background-color: #333;
-    color: #fff;
+// select {
+//     margin-bottom: 20px;
+//     height: 30px;
+//     width: 200px;
+//     background-color: #333;
+//     color: #fff;
+// }
+
+.tab-selected {
+    background-color: #6d6d6d;
+    color: #bfbebe;
+    border: 2px solid #bfbebe !important;
+    border-bottom: none !important;
+}
+
+.index-tabs {
+    color: #c1c0c0;
+    width: 98%;
+    margin: 0.5em auto 0 auto;
+
+    div {
+        display: inline-block;
+        width: 13%;
+        padding: 0.5em;
+        margin-right: 1px;
+        font-size: 0.8em;
+        text-align: center;
+        border: 2px solid #2f2d2d;
+        border-bottom: none;
+        cursor: pointer;
+    }
 }
