@@ -18,28 +18,28 @@
 
 <div class="country-1">
     <div>
-        <select #country1 (change)="selectCountry(country1.value)">
+        <select #country1 (change)="selectCountry1(country1.value)"> <!-- FIXME loop countries -->
             <option value="China">China</option>
-            <option value="US">United States</option>
-            <option value="UK">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
             <option value="Japan">Japan</option>
         </select>
     </div>
-    <div echarts [theme]="'dark'" [options]="sevenIndexesOption" class="line-chart"></div>
-    <div echarts [theme]="'dark'" [options]="indexAndStockOption" class="line-chart"></div>
-    <div echarts [theme]="'dark'" [options]="indexAndMacroeOption" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="sevenIndexesCountry1" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndStockCountry1" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndMacroeCountry1" class="line-chart"></div>
 </div>
 
 <div class="country-2">
     <div>
-        <select #country2 (change)="selectCountry(country2.value)">
-            <option value="US">United States</option>
+        <select #country2 (change)="selectCountry2(country2.value)"> <!-- FIXME loop countries -->
+            <option value="United States">United States</option>
             <option value="China">China</option>
-            <option value="UK">United Kingdom</option>
+            <option value="United Kingdom">United Kingdom</option>
             <option value="Japan">Japan</option>
         </select>
     </div>
-    <div echarts [theme]="'dark'" [options]="sevenIndexesOption" class="line-chart"></div>
-    <div echarts [theme]="'dark'" [options]="indexAndStockOption" class="line-chart"></div>
-    <div echarts [theme]="'dark'" [options]="indexAndMacroeOption" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="sevenIndexesCountry2" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndStockCountry2" class="line-chart"></div>
+    <div echarts [theme]="'dark'" [options]="indexAndMacroeCountry2" class="line-chart"></div>
 </div>

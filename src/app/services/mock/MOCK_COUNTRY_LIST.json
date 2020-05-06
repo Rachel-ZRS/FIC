@@ -3,8 +3,9 @@
       "globalTotalConfirmed": 2165113,
       "globalTotalDeath": 631521
   },
-  "countryList": {
-      "confirmedList": [{
+  "countryListByIndex": {
+      "confirmedList": [
+        {
           "value": 609516,
           "name": "United States"
         }, {
@@ -31,8 +32,10 @@
         }, {
           "value": 31119,
           "name": "Turkey"
-        }],
-      "deathList": [{
+        }
+      ],
+      "deathList": [
+        {
           "value": 90511,
           "name": "United States"
         }, {
@@ -59,9 +62,10 @@
         }, {
           "value": 16019,
           "name": "Turkey"
-        }]
+        }
+      ]
   },
-  "countryIndexes": {
+  "indexesByCountry": {
     "United States": [
       {
         "name": "Total Confirmed",
@@ -158,5 +162,285 @@
         "value": 10000
       }
     ]
+  },
+  "statisticByCountry": {
+    "United States": {
+      "indexesWithDates": {
+        "tc": [
+          {
+            "date": "01/01/2020",
+            "value": 1234
+          },
+          {
+            "date": "01/15/2020",
+            "value": 5678
+          },
+          {
+            "date": "01/31/2020",
+            "value": 11060
+          },
+          {
+            "date": "02/15/2020",
+            "value": 35162
+          },
+          {
+            "date": "02/29/2020",
+            "value": 42318
+          },
+          {
+            "date": "03/15/2020",
+            "value": 48134
+          },
+          {
+            "date": "03/31/2020",
+            "value": 79423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 93556
+          },
+          {
+            "date": "04/30/2020",
+            "value": 139236
+          }
+        ],
+        "td": [
+    
+        ],
+        "tr": [
+    
+        ],
+        "nowc": [
+    
+        ],
+        "newc": [
+    
+        ],
+        "nd": [
+    
+        ],
+        "nr": [
+    
+        ]
+      },
+      "stockDataWithDates": [
+        {
+          "date": "01/01/2020",
+          "value": 98244
+        },
+        {
+          "date": "01/15/2020",
+          "value": 93462
+        },
+        {
+          "date": "01/31/2020",
+          "value": 71453
+        },
+        {
+          "date": "02/15/2020",
+          "value": 54584
+        },
+        {
+          "date": "02/29/2020",
+          "value": 51087
+        },
+        {
+          "date": "03/15/2020",
+          "value": 41934
+        },
+        {
+          "date": "03/31/2020",
+          "value": 31423
+        },
+        {
+          "date": "04/15/2020",
+          "value": 18832
+        },
+        {
+          "date": "04/30/2020",
+          "value": 13084
+        }
+      ],
+      "macroeconomicWithDates": {
+        "GDP": [
+          {
+            "date": "01/01/2020",
+            "value": 98244
+          },
+          {
+            "date": "01/15/2020",
+            "value": 93462
+          },
+          {
+            "date": "01/31/2020",
+            "value": 71453
+          },
+          {
+            "date": "02/15/2020",
+            "value": 54584
+          },
+          {
+            "date": "02/29/2020",
+            "value": 51087
+          },
+          {
+            "date": "03/15/2020",
+            "value": 41934
+          },
+          {
+            "date": "03/31/2020",
+            "value": 31423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 18832
+          },
+          {
+            "date": "04/30/2020",
+            "value": 13084
+          }
+        ],
+        "CPI": []
+      }
+    },
+    "China": {
+      "indexesWithDates": {
+        "tc": [
+          {
+            "date": "01/01/2020",
+            "value": 5432
+          },
+          {
+            "date": "01/15/2020",
+            "value": 9876
+          },
+          {
+            "date": "01/31/2020",
+            "value": 11060
+          },
+          {
+            "date": "02/15/2020",
+            "value": 35162
+          },
+          {
+            "date": "02/29/2020",
+            "value": 42318
+          },
+          {
+            "date": "03/15/2020",
+            "value": 48134
+          },
+          {
+            "date": "03/31/2020",
+            "value": 79423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 93556
+          },
+          {
+            "date": "04/30/2020",
+            "value": 139236
+          }
+        ],
+        "td": [
+    
+        ],
+        "tr": [
+    
+        ],
+        "nowc": [
+    
+        ],
+        "newc": [
+    
+        ],
+        "nd": [
+    
+        ],
+        "nr": [
+    
+        ]
+      },
+      "stockDataWithDates": [
+        {
+          "date": "01/01/2020",
+          "value": 98244
+        },
+        {
+          "date": "01/15/2020",
+          "value": 93462
+        },
+        {
+          "date": "01/31/2020",
+          "value": 71453
+        },
+        {
+          "date": "02/15/2020",
+          "value": 54584
+        },
+        {
+          "date": "02/29/2020",
+          "value": 51087
+        },
+        {
+          "date": "03/15/2020",
+          "value": 41934
+        },
+        {
+          "date": "03/31/2020",
+          "value": 31423
+        },
+        {
+          "date": "04/15/2020",
+          "value": 18832
+        },
+        {
+          "date": "04/30/2020",
+          "value": 13084
+        }
+      ],
+      "macroeconomicWithDates": {
+        "GDP": [
+          {
+            "date": "01/01/2020",
+            "value": 98244
+          },
+          {
+            "date": "01/15/2020",
+            "value": 93462
+          },
+          {
+            "date": "01/31/2020",
+            "value": 71453
+          },
+          {
+            "date": "02/15/2020",
+            "value": 54584
+          },
+          {
+            "date": "02/29/2020",
+            "value": 51087
+          },
+          {
+            "date": "03/15/2020",
+            "value": 41934
+          },
+          {
+            "date": "03/31/2020",
+            "value": 31423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 18832
+          },
+          {
+            "date": "04/30/2020",
+            "value": 13084
+          }
+        ],
+        "CPI": []
+      }
+    }
   }
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DataListingService } from '../services/data-listing.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-data-listing',
@@ -7,6 +6,7 @@ import { DataListingService } from '../services/data-listing.service';
   styleUrls: ['./data-listing.component.scss']
 })
 export class DataListingComponent implements OnInit {
+  @Input() serviceRes: any;
   tcSelected = true; // Total Confirmed tab is selected by default
   defaultCategory = 'confirmed';
   category_confirm = 'Total Confirmed';
@@ -24,23 +24,21 @@ export class DataListingComponent implements OnInit {
   summaryData: any;
   countryListConfirm = [];
   countryListDeath = [];
-  countryIndexes: any;
+  indexesByCountry: any;
 
-  constructor(private dataService: DataListingService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.dataService.getCountryDataList().subscribe(data => {
-      this.summaryData = data.globalSummary;
-      this.countryListConfirm = data.countryList.confirmedList;
-      this.countryListDeath = data.countryList.deathList;
-      this.countryIndexes = data.countryIndexes;
+    this.summaryData = this.serviceRes.globalSummary;
+    this.countryListConfirm = this.serviceRes.countryListByIndex.confirmedList;
+    this.countryListDeath = this.serviceRes.countryListByIndex.deathList;
+    this.indexesByCountry = this.serviceRes.indexesByCountry;
 
-      // default values
-      this.getGlobalSummary(this.defaultCategory);
-      this.getCountryList(this.defaultCategory);
-      this.selectedCountryName = this.countryDataList[0].name;
-      this.switchIndexesData(this.selectedCountryName);
-    });
+    // default values
+    this.getGlobalSummary(this.defaultCategory);
+    this.getCountryList(this.defaultCategory);
+    this.selectedCountryName = this.countryDataList[0].name;
+    this.switchIndexesData(this.selectedCountryName);
   }
 
   switchCategory(category: string): void {
@@ -83,7 +81,7 @@ export class DataListingComponent implements OnInit {
 
   switchIndexesData(selectedCountry: string): void {
     this.selectedCountryName = selectedCountry;
-    this.indexes = this.countryIndexes.hasOwnProperty(selectedCountry) ? this.countryIndexes[selectedCountry] : [];
+    this.indexes = this.indexesByCountry.hasOwnProperty(selectedCountry) ? this.indexesByCountry[selectedCountry] : [];
   }
 
 }
