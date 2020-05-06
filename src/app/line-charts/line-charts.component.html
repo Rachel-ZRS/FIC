@@ -18,11 +18,8 @@
 
 <div class="country-1">
     <div>
-        <select #country1 (change)="selectCountry1(country1.value)"> <!-- FIXME loop countries -->
-            <option value="China">China</option>
-            <option value="United States">United States</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="Japan">Japan</option>
+        <select #country1 (change)="selectCountry1(country1.value)">
+            <option *ngFor="let name of countries" value="{{name}}">{{name}}</option> <!-- TODO default option -->
         </select>
     </div>
     <div echarts [theme]="'dark'" [options]="sevenIndexesCountry1" class="line-chart"></div>
@@ -32,11 +29,8 @@
 
 <div class="country-2">
     <div>
-        <select #country2 (change)="selectCountry2(country2.value)"> <!-- FIXME loop countries -->
-            <option value="United States">United States</option>
-            <option value="China">China</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="Japan">Japan</option>
+        <select #country2 (change)="selectCountry2(country2.value)">
+            <option *ngFor="let name of countries" value="{{name}}">{{name}}</option>
         </select>
     </div>
     <div echarts [theme]="'dark'" [options]="sevenIndexesCountry2" class="line-chart"></div>

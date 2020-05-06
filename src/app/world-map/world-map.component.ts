@@ -14,7 +14,7 @@ export class WorldMapComponent implements OnInit {
   @Input() serviceRes: any;
 
   selectedTab = 'tc'; // Total Confirmed by default
-  indexesMapping = { // TODO abstract
+  indexesMapping = {
     'tc': 'Total Confirmed',
     'td': 'Total Death',
     'tr': 'Total Recovered',
@@ -26,7 +26,7 @@ export class WorldMapComponent implements OnInit {
   echartsInstance: any;
   mapOption = {};
   mapData: any;
-  allCountryDataWithSevenIndexes = { // TODO data model
+  allCountryDataWithSevenIndexes = {
     tc: [],
     td: [],
     tr: [],

@@ -11,7 +11,7 @@ export class DataListingService {
 
   constructor(private http: HttpClient) {}
 
-  get(): Observable<any> { // TODO model
+  get(): Observable<any> {
     // return this.http.get<any>(this.apiEndpoint);
     return of(require("./mock/MOCK_COUNTRY_LIST.json"));
   }

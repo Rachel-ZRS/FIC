@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LineChartsComponent implements OnInit {
   @Input() serviceRes: any;
   statisticByCountry: any;
+  countries = [];
 
   sevenIndexesCountry1 = {};
   sevenIndexesCountry2 = {};
@@ -17,7 +18,7 @@ export class LineChartsComponent implements OnInit {
   indexAndMacroeCountry2 = {};
 
   selectedIndexId = 'tc'; // default 1/7 index
-  indexesMapping = { // TODO abstract
+  indexesMapping = {
     'tc': 'Total Confirmed',
     'td': 'Total Death',
     'tr': 'Total Recovered',
@@ -28,13 +29,20 @@ export class LineChartsComponent implements OnInit {
   };
   selectedCountry1 = 'China'; // default
   selectedCountry2 = 'United States'; // default
+  selectedEconomic = 'GDP'; // default
 
   constructor() { }
 
   ngOnInit(): void {
     this.statisticByCountry = this.serviceRes.statisticByCountry;
+    for (const key in this.statisticByCountry) {
+      if (this.statisticByCountry.hasOwnProperty(key)) {
+        this.countries.push(key);
+      }
+    }
     this.loadSevenIndexesChart('China', 'United States'); // default
     this.loadIndexAndStockChart('China', 'United States'); // default
+    this.loadIndexAndEconomicChart('China', 'United States'); // default
   }
 
   buildCategoryAndSeriesData(data: any) {
@@ -192,70 +200,113 @@ export class LineChartsComponent implements OnInit {
   }
 
 
-  indexAndMacroeOption = {
-    color: ['#a71616', '#F6B127'],
-    legend: {
-      data: ['Total Confirmed', 'GDP'] // TODO switch
-    },
-    tooltip: {
-      trigger: 'axis'
-    },
-    grid: { // position
-      left: '6%',
-      right: '12%',
-      bottom: '5%',
-      containLabel: true
-    },
-    xAxis: [{
-      type: 'category',
-      boundaryGap: false,
-      data: ['01/01/2020','01/15/2020','01/31/2020','02/15/2020','02/29/2020','03/15/2020','03/31/2020','04/15/2020','04/30/2020','05/15/2020'], // TODO api to provide category data
-    }],
-    yAxis: [{
-      type: 'value'
-    }],
-    series: [{
-      name: 'Total Confirmed',
-      smooth: true,
-      type: 'line',
-      label: {
-        normal: {
-          show: true
-        }
-      },
-      data:[8356, 9427, 11060, 35162, 42318, 48134, 79423, 93556, 139236] // TODO api to provide series data
-    }, {
-      name: 'GDP',
-      smooth: true,
-      type: 'line',
-      label: {
-        normal: {
-          show: true
-        }
-      },
-      data:[98244, 93462, 71453, 54584, 51087, 41934, 31423, 18832, 13084] // TODO api to provide series data
-    }]
+  buildIndexAndEconomicDataByCountry(countryName: string) {
+    const indexData = this.buildIndexDataByCountry(countryName);
+    const countryStatistic = this.statisticByCountry.hasOwnProperty(countryName) ? this.statisticByCountry[countryName] : {};
+    const economicData = countryStatistic.macroeconomicWithDates ? countryStatistic.macroeconomicWithDates : {};
+    return {
+      "indexData": indexData,
+      "economicData": economicData.hasOwnProperty(this.selectedEconomic) ? economicData[this.selectedEconomic] : []
+    };
   }
+
+  buildIndexAndEconomicChartData(indexAndEconomicData: any) {
+    const chartData_index = this.buildCategoryAndSeriesData(indexAndEconomicData.indexData);
+    const chartData_economic = this.buildCategoryAndSeriesData(indexAndEconomicData.economicData);
+    const chartData = {
+      "categories": chartData_index.categoryData,
+      "series": {
+        "indexSeries": chartData_index.seriesData,
+        "economicSeries": chartData_economic.seriesData
+      }
+    };
+    return chartData;
+  }
+
+  buildIndexAndEconomicChartOption(chartData: any) {
+    return {
+      color: ['#a71616', '#F6B127'],
+      legend: {
+        data: [this.indexesMapping[this.selectedIndexId], this.selectedEconomic]
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      grid: { // position
+        left: '6%',
+        right: '12%',
+        bottom: '5%',
+        containLabel: true
+      },
+      xAxis: [{
+        type: 'category',
+        boundaryGap: false,
+        data: chartData.categories
+      }],
+      yAxis: [{
+        type: 'value'
+      }],
+      series: [{
+        name: this.indexesMapping[this.selectedIndexId],
+        smooth: true,
+        type: 'line',
+        label: {
+          normal: {
+            show: true
+          }
+        },
+        data: chartData.series.indexSeries
+      }, {
+        name: this.selectedEconomic,
+        smooth: true,
+        type: 'line',
+        label: {
+          normal: {
+            show: true
+          }
+        },
+        data: chartData.series.economicSeries
+      }]
+    };
+  }
+
+  loadIndexAndEconomicChart(countryName1: string, countryName2: string) {
+    if (countryName1) {
+      const indexAndEconomicData = this.buildIndexAndEconomicDataByCountry(countryName1);
+      const chartData = this.buildIndexAndEconomicChartData(indexAndEconomicData);
+      this.indexAndMacroeCountry1 = this.buildIndexAndEconomicChartOption(chartData);
+    }
+    if (countryName2) {
+      const indexAndEconomicData = this.buildIndexAndEconomicDataByCountry(countryName2);
+      const chartData = this.buildIndexAndEconomicChartData(indexAndEconomicData);
+      this.indexAndMacroeCountry2 = this.buildIndexAndEconomicChartOption(chartData);
+    }
+  }
+
 
   selectIndex(id: string) {
     this.selectedIndexId = id;
     this.loadSevenIndexesChart(this.selectedCountry1, this.selectedCountry2);
     this.loadIndexAndStockChart(this.selectedCountry1, this.selectedCountry2);
+    this.loadIndexAndEconomicChart(this.selectedCountry1, this.selectedCountry2);
   }
 
   selectME(id: string) {
-
+    this.selectedEconomic = id;
+    this.loadIndexAndEconomicChart(this.selectedCountry1, this.selectedCountry2);
   }
 
   selectCountry1(name: string) {
     this.selectedCountry1 = name;
     this.loadSevenIndexesChart(name, "");
     this.loadIndexAndStockChart(name, "");
+    this.loadIndexAndEconomicChart(name, "");
   }
 
   selectCountry2(name: string) {
     this.selectedCountry2 = name;
     this.loadSevenIndexesChart("", name);
     this.loadIndexAndStockChart("", name);
+    this.loadIndexAndEconomicChart("", name);
   }
 }
