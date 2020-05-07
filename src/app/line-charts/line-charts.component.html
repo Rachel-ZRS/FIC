@@ -18,8 +18,8 @@
 
 <div class="country-1">
     <div>
-        <select #country1 (change)="selectCountry1(country1.value)">
-            <option *ngFor="let name of countries" value="{{name}}">{{name}}</option> <!-- TODO default option -->
+        <select #country1 [(ngModel)]="selectedCountry1" (ngModelChange)="selectCountry1(country1.value)">
+            <option *ngFor="let name of countries" value="{{name}}">{{name}}</option>
         </select>
     </div>
     <div echarts [theme]="'dark'" [options]="sevenIndexesCountry1" class="line-chart"></div>
@@ -29,7 +29,7 @@
 
 <div class="country-2">
     <div>
-        <select #country2 (change)="selectCountry2(country2.value)">
+        <select #country2 [(ngModel)]="selectedCountry2" (ngModelChange)="selectCountry2(country2.value)">
             <option *ngFor="let name of countries" value="{{name}}">{{name}}</option>
         </select>
     </div>

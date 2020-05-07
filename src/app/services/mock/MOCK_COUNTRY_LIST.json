@@ -69,101 +69,312 @@
     "United States": [
       {
         "name": "Total Confirmed",
-        "value": 1111111
+        "value": 983475
       }, {
         "name": "Total Death",
-        "value": 22222
+        "value": 72376
       }, {
         "name": "Total Recovered",
-        "value": 33333
+        "value": 129384
       }, {
         "name": "Now Confirmed",
-        "value": 4444
+        "value": 83437
       }, {
         "name": "New Confirmed",
-        "value": 55
+        "value": 19983
       }, {
         "name": "New Death",
-        "value": 66
+        "value": 3435
       }, {
         "name": "New Recovered",
-        "value": 777
+        "value": 9852
       }
     ],
     "United Kingdom": [
       {
         "name": "Total Confirmed",
-        "value": 222222
+        "value": 234298
       }, {
         "name": "Total Death",
-        "value": 33333
+        "value": 87645
       }, {
         "name": "Total Recovered",
-        "value": 44444
+        "value": 652119
       }, {
         "name": "Now Confirmed",
-        "value": 5555
+        "value": 87629
       }, {
         "name": "New Confirmed",
-        "value": 666
+        "value": 8757
       }, {
         "name": "New Death",
-        "value": 777
+        "value": 7521
       }, {
         "name": "New Recovered",
-        "value": 8888
+        "value": 9875
       }
     ],
     "China": [
       {
         "name": "Total Confirmed",
-        "value": 3333333
+        "value": 7345611
       }, {
         "name": "Total Death",
-        "value": 444444
+        "value": 664351
       }, {
         "name": "Total Recovered",
-        "value": 55555
+        "value": 862911
       }, {
         "name": "Now Confirmed",
-        "value": 6666
+        "value": 87821
       }, {
         "name": "New Confirmed",
-        "value": 777
+        "value": 64398
       }, {
         "name": "New Death",
-        "value": 888
+        "value": 6512
       }, {
         "name": "New Recovered",
-        "value": 9999
+        "value": 76511
       }
     ],
     "Italy": [
       {
         "name": "Total Confirmed",
-        "value": 44444444
+        "value": 2123847
       }, {
         "name": "Total Death",
-        "value": 555555
+        "value": 712364
       }, {
         "name": "Total Recovered",
-        "value": 666666
+        "value": 345818
       }, {
         "name": "Now Confirmed",
-        "value": 77777
+        "value": 9875
       }, {
         "name": "New Confirmed",
-        "value": 888
+        "value": 17425
       }, {
         "name": "New Death",
-        "value": 999
+        "value": 8523
       }, {
         "name": "New Recovered",
-        "value": 10000
+        "value": 76512
       }
     ]
   },
   "statisticByCountry": {
+    "Italy": {
+      "indexesWithDates": {
+        "tc": [
+          {
+            "date": "01/01/2020",
+            "value": 3456
+          },
+          {
+            "date": "01/15/2020",
+            "value": 7890
+          },
+          {
+            "date": "01/31/2020",
+            "value": 11060
+          },
+          {
+            "date": "02/15/2020",
+            "value": 35162
+          },
+          {
+            "date": "02/29/2020",
+            "value": 42318
+          },
+          {
+            "date": "03/15/2020",
+            "value": 48134
+          },
+          {
+            "date": "03/31/2020",
+            "value": 79423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 93556
+          },
+          {
+            "date": "04/30/2020",
+            "value": 139236
+          }
+        ],
+        "td": [
+          {
+            "date": "01/01/2020",
+            "value": 6789
+          },
+          {
+            "date": "01/15/2020",
+            "value": 9876
+          },
+          {
+            "date": "01/31/2020",
+            "value": 11060
+          },
+          {
+            "date": "02/15/2020",
+            "value": 35162
+          },
+          {
+            "date": "02/29/2020",
+            "value": 42318
+          },
+          {
+            "date": "03/15/2020",
+            "value": 48134
+          },
+          {
+            "date": "03/31/2020",
+            "value": 79423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 93556
+          },
+          {
+            "date": "04/30/2020",
+            "value": 139236
+          }
+        ],
+        "tr": [
+    
+        ],
+        "nowc": [
+    
+        ],
+        "newc": [
+    
+        ],
+        "nd": [
+    
+        ],
+        "nr": [
+    
+        ]
+      },
+      "stockDataWithDates": [
+        {
+          "date": "01/01/2020",
+          "value": 98765
+        },
+        {
+          "date": "01/15/2020",
+          "value": 76543
+        },
+        {
+          "date": "01/31/2020",
+          "value": 71453
+        },
+        {
+          "date": "02/15/2020",
+          "value": 54584
+        },
+        {
+          "date": "02/29/2020",
+          "value": 51087
+        },
+        {
+          "date": "03/15/2020",
+          "value": 41934
+        },
+        {
+          "date": "03/31/2020",
+          "value": 31423
+        },
+        {
+          "date": "04/15/2020",
+          "value": 18832
+        },
+        {
+          "date": "04/30/2020",
+          "value": 13084
+        }
+      ],
+      "macroeconomicWithDates": {
+        "GDP": [
+          {
+            "date": "01/01/2020",
+            "value": 87654
+          },
+          {
+            "date": "01/15/2020",
+            "value": 76543
+          },
+          {
+            "date": "01/31/2020",
+            "value": 71453
+          },
+          {
+            "date": "02/15/2020",
+            "value": 54584
+          },
+          {
+            "date": "02/29/2020",
+            "value": 51087
+          },
+          {
+            "date": "03/15/2020",
+            "value": 41934
+          },
+          {
+            "date": "03/31/2020",
+            "value": 31423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 18832
+          },
+          {
+            "date": "04/30/2020",
+            "value": 13084
+          }
+        ],
+        "CPI": [
+          {
+            "date": "01/01/2020",
+            "value": 97531
+          },
+          {
+            "date": "01/15/2020",
+            "value": 86420
+          },
+          {
+            "date": "01/31/2020",
+            "value": 71453
+          },
+          {
+            "date": "02/15/2020",
+            "value": 54584
+          },
+          {
+            "date": "02/29/2020",
+            "value": 51087
+          },
+          {
+            "date": "03/15/2020",
+            "value": 41934
+          },
+          {
+            "date": "03/31/2020",
+            "value": 31423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 18832
+          },
+          {
+            "date": "04/30/2020",
+            "value": 13084
+          }
+        ]
+      }
+    },
     "United States": {
       "indexesWithDates": {
         "tc": [
@@ -205,7 +416,42 @@
           }
         ],
         "td": [
-    
+          {
+            "date": "01/01/2020",
+            "value": 4567
+          },
+          {
+            "date": "01/15/2020",
+            "value": 6789
+          },
+          {
+            "date": "01/31/2020",
+            "value": 11060
+          },
+          {
+            "date": "02/15/2020",
+            "value": 35162
+          },
+          {
+            "date": "02/29/2020",
+            "value": 42318
+          },
+          {
+            "date": "03/15/2020",
+            "value": 48134
+          },
+          {
+            "date": "03/31/2020",
+            "value": 79423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 93556
+          },
+          {
+            "date": "04/30/2020",
+            "value": 139236
+          }
         ],
         "tr": [
     
@@ -226,11 +472,11 @@
       "stockDataWithDates": [
         {
           "date": "01/01/2020",
-          "value": 98244
+          "value": 109876
         },
         {
           "date": "01/15/2020",
-          "value": 93462
+          "value": 97531
         },
         {
           "date": "01/31/2020",
@@ -265,11 +511,11 @@
         "GDP": [
           {
             "date": "01/01/2020",
-            "value": 98244
+            "value": 108642
           },
           {
             "date": "01/15/2020",
-            "value": 93462
+            "value": 99775
           },
           {
             "date": "01/31/2020",
@@ -300,7 +546,44 @@
             "value": 13084
           }
         ],
-        "CPI": []
+        "CPI": [
+          {
+            "date": "01/01/2020",
+            "value": 109753
+          },
+          {
+            "date": "01/15/2020",
+            "value": 88664
+          },
+          {
+            "date": "01/31/2020",
+            "value": 71453
+          },
+          {
+            "date": "02/15/2020",
+            "value": 54584
+          },
+          {
+            "date": "02/29/2020",
+            "value": 51087
+          },
+          {
+            "date": "03/15/2020",
+            "value": 41934
+          },
+          {
+            "date": "03/31/2020",
+            "value": 31423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 18832
+          },
+          {
+            "date": "04/30/2020",
+            "value": 13084
+          }
+        ]
       }
     },
     "China": {
@@ -344,7 +627,42 @@
           }
         ],
         "td": [
-    
+          {
+            "date": "01/01/2020",
+            "value": 6789
+          },
+          {
+            "date": "01/15/2020",
+            "value": 7890
+          },
+          {
+            "date": "01/31/2020",
+            "value": 11060
+          },
+          {
+            "date": "02/15/2020",
+            "value": 35162
+          },
+          {
+            "date": "02/29/2020",
+            "value": 42318
+          },
+          {
+            "date": "03/15/2020",
+            "value": 48134
+          },
+          {
+            "date": "03/31/2020",
+            "value": 79423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 93556
+          },
+          {
+            "date": "04/30/2020",
+            "value": 139236
+          }
         ],
         "tr": [
     
@@ -365,11 +683,11 @@
       "stockDataWithDates": [
         {
           "date": "01/01/2020",
-          "value": 98244
+          "value": 88765
         },
         {
           "date": "01/15/2020",
-          "value": 93462
+          "value": 77654
         },
         {
           "date": "01/31/2020",
@@ -404,11 +722,11 @@
         "GDP": [
           {
             "date": "01/01/2020",
-            "value": 98244
+            "value": 78901
           },
           {
             "date": "01/15/2020",
-            "value": 93462
+            "value": 89012
           },
           {
             "date": "01/31/2020",
@@ -439,7 +757,44 @@
             "value": 13084
           }
         ],
-        "CPI": []
+        "CPI": [
+          {
+            "date": "01/01/2020",
+            "value": 90123
+          },
+          {
+            "date": "01/15/2020",
+            "value": 75319
+          },
+          {
+            "date": "01/31/2020",
+            "value": 71453
+          },
+          {
+            "date": "02/15/2020",
+            "value": 54584
+          },
+          {
+            "date": "02/29/2020",
+            "value": 51087
+          },
+          {
+            "date": "03/15/2020",
+            "value": 41934
+          },
+          {
+            "date": "03/31/2020",
+            "value": 31423
+          },
+          {
+            "date": "04/15/2020",
+            "value": 18832
+          },
+          {
+            "date": "04/30/2020",
+            "value": 13084
+          }
+        ]
       }
     }
   }
